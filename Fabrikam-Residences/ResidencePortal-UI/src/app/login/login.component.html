@@ -1,0 +1,17 @@
+<div class="col-4 offset-2 text-center">
+  <div *ngIf="user.isAuthenticated; else loginUser">
+    <h3>Welcome, {{ user.name }}</h3>
+    <button class="btn btn-primary" (click)="logout()">Logout </button>
+  </div>
+  <ng-template #loginUser>
+    <form class="form-signin">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <input [(ngModel)]="username" name="username" class="form-control mb-3" placeholder="Email address" autofocus>
+      <input [(ngModel)]="password" name="password" class="form-control mb-3" placeholder="Password" type="password">
+      <button class="btn btn-primary btn-block" (click)="login()">Sign in</button>
+    </form>
+    <div class="alert alert-danger" *ngIf="this.auth.hasError">
+      {{this.auth.errorMessage}}
+    </div>
+  </ng-template>
+</div>

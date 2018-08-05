@@ -1,0 +1,20 @@
+{
+  "name": "residenceportal-api",
+  "version": "0.0.0",
+  "description": "The NodeJS API servicing the Residence Portal UI",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "debug": "node --inspect index.js"
+  },
+  "author": "Jeff@HopperTech.net",
+  "license": "MIT",
+  "dependencies": {
+    "applicationinsights": "^1.0.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {}
+}

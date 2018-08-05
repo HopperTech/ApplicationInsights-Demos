@@ -1,0 +1,29 @@
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <a class="navbar-brand" routerLink="/home">{{title}}</a>
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="home" routerLinkActive="active">Home</a>
+      <a *ngIf="user.isAuthenticated"class="nav-item nav-link" routerLink="activities" routerLinkActive="active">Activities</a>
+    </div>
+  </div>
+  <div class="navbar-expand ml-auto navbar-nav">
+    <div class="navbar-nav">
+      <div *ngIf="user.isAuthenticated; else loggedOut">
+        <a class="nav-item nav-link" routerLink="login" routerLinkActive="active">Welcome {{user.name}}</a>
+      </div>
+      <ng-template #loggedOut>
+        <a class="nav-item nav-link" routerLink="login" routerLinkActive="active">Login</a>
+      </ng-template>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<nav class="navbar navbar-dark bg-dark mt-5 fixed-bottom">
+  <div class="navbar-expand m-auto navbar-text">
+    <a href="https://github.com/HopperTech/ApplicationInsights-Demos" target="_blank">
+      <i class="fa fa-github"></i>
+    </a>
+  </div>
+</nav>

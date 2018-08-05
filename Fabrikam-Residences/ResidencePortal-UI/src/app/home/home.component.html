@@ -1,0 +1,11 @@
+<div class="mx-auto">
+  <div class="jumbotron text-center">
+    <h1>Welcome to Fabrikam Residences</h1>
+    <h2><i class="fa fa-users mr-3"></i> Where Community Matters <i class="fa fa-users ml-3"></i></h2>
+    <br />
+    <p *ngIf="user.isAuthenticated; else loggedOut" >Feel free to come out and see us at one of our <a routerLink="/activities" routerLinkActive="active">Activities</a> </p>
+    <ng-template #loggedOut>
+      <h3>Please <a routerLink="/login" routerLinkActive="active">Login</a> to see our Activities </h3>
+    </ng-template>
+  </div>
+</div>
