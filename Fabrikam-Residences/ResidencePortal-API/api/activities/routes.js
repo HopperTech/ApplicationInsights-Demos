@@ -1,5 +1,5 @@
 const routes = require('express').Router();
-const activities = require('./activities.json');
+const activities = require('./activities');
 const appInsights = require('applicationinsights');
 
 routes.get('/', (req, res) => {

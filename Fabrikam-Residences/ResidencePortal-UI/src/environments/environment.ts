@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   baseApiUrl: 'http://localhost:3000/api',
   appInsights: {
-    instrumentationKey: '[Replace with your key]'
+    instrumentationKey: '[Replace With Your Key]'
   }
 };
 

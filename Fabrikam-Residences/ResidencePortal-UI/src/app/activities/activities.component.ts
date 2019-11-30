@@ -3,7 +3,6 @@ import { Activity } from './activity';
 import { ActivityService } from './activity.service';
 import { User } from '../auth/user';
 import { AuthService } from '../auth/auth.service';
-import { AppInsights } from 'applicationinsights-js';
 
 @Component({
   selector: 'app-activities',
@@ -22,9 +21,7 @@ export class ActivitiesComponent implements OnInit {
   constructor(
     private activityService: ActivityService,
     private auth: AuthService
-  ) {
-    AppInsights.trackPageView('Activities', window.location.href);
-  }
+  ) {}
 
   ngOnInit() {
     this.getActivities();

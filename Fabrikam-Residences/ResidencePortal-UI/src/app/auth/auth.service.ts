@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { User } from './user';
 
 import { environment } from '../../environments/environment';
-import { AppInsights } from 'applicationinsights-js';
 
 const api = environment.baseApiUrl;
 
@@ -20,12 +19,6 @@ export class AuthService {
   private loadUser(authenticateUser: User): User {
     // tslint:disable-next-line
     Object.assign(this.user, authenticateUser);
-
-    if (this.user.isAuthenticated) {
-      AppInsights.setAuthenticatedUserContext(this.user.userId, this.user.role);
-    } else {
-      AppInsights.clearAuthenticatedUserContext();
-    }
 
     return this.user;
   }
